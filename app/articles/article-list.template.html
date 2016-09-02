@@ -1,0 +1,83 @@
+<main class="post-content" ng-repeat="article in $ctrl.articles">
+    <article role="article" class="post">
+    <figure class="post__image-box">
+        <img ng-src="{{article.link}}" alt="Flovers" class="post__image image-1">
+    </figure>
+    <h2 class="post__post-header"><a href="#" class="post__header-link">{{article.header}}</a></h2>
+
+    <footer role="presentation" class="post-info">
+        <div class="post-info__container">
+            <time class="post-info__post-time">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" class="post-info__post-clock">
+                    <g><title>Post time</title>
+                        <g><use xlink:href="src/icons/sprite.svg#icon-clock"/></g>
+                    </g>
+                </svg>
+                {{article.createTime | date:'HH:mm MMM d,y'}}
+            </time>
+            <address>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" class="post-info__post-author">
+                    <g><title>Post author</title>
+                        <g><use xlink:href="src/icons/sprite.svg#icon-footstep"/></g>
+                    </g>
+                </svg>
+                <a href="#" class="post-info__author-link">by E. Hyperraccoon</a>
+            </address>
+        </div>
+        <ul class="post-info__container-social">
+            <li class="post-info__item">
+                <a href="#" class="post-info__social-link link-social">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" class="post-info__social-icon">
+                        <g><title>Facebook</title>
+                            <g><use xlink:href="src/icons/sprite.svg#icon-facebook"/></g>
+                        </g>
+                    </svg>
+                    <span class="screen-reader-text">Share with facebook</span>16
+                </a>
+            </li>
+            <li class="post-info__item">
+                <a href="#" class="post-info__social-link link-social">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" class="post-info__social-icon social-link-img-gplus">
+                        <g><title>Google plus</title>
+                            <g><use xlink:href="src/icons/sprite.svg#icon-gplus"/></g>
+                        </g>
+                    </svg>
+                    <span class="screen-reader-text">Share with google plus</span>7
+                </a>
+            </li>
+            <li class="post-info__item">
+                <a href="#" class="post-info__social-link link-social">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" class="post-info__social-icon">
+                        <g><title>Twitter</title>
+                            <g><use xlink:href="src/icons/sprite.svg#icon-twitter"/></g>
+                        </g>
+                    </svg>
+                    16
+                    <span class="screen-reader-text">Share with twitter</span>
+                </a>
+            </li>
+            <li class="post-info__item">
+                <a href="#" class="post-info__social-link link-social">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" class="post-info__social-icon">
+                        <g><title>VK</title>
+                            <g><use xlink:href="src/icons/sprite.svg#icon-vk"/></g>
+                        </g>
+                    </svg>15
+                    <span class="screen-reader-text">Share with vk</span>
+                </a>
+            </li>
+            <li class="post-info__item">
+                <a href="#" class="post-info__social-link link-social">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" class="post-info__social-icon">
+                        <g><title>Yandex</title>
+                            <g><use xlink:href="src/icons/sprite.svg#icon-yaru"/></g>
+                        </g>
+                    </svg>1
+                    <span class="screen-reader-text">Share with yandex</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <p class="post__article">{{article.snipet | limitTo: $ctrl.limit()}}{{$ctrl.placeholder}}</p>
+</article>
+</main>
